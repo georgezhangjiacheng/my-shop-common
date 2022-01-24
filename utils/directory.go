@@ -3,8 +3,8 @@ package utils
 import (
 	"os"
 
+	"github.com/georgezhangjiacheng/my-shop-common/global"
 	"go.uber.org/zap"
-	"my-shop/common/global"
 )
 
 //@author: georgezhangjc

@@ -7,8 +7,8 @@ import (
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
-	"my-shop/common/global"
-	"my-shop/common/utils"
+	"github.com/georgezhangjiacheng/my-shop-common/global"
+	"github.com/georgezhangjiacheng/my-shop-common/utils"
 )
 
 func Viper(path ...string) *viper.Viper {

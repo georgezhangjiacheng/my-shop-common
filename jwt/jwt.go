@@ -2,8 +2,8 @@ package jwt
 
 import (
 	"errors"
+	"github.com/georgezhangjiacheng/my-shop-common/global"
 	"github.com/google/uuid"
-	"my-shop/common/global"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"

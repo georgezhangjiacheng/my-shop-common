@@ -5,7 +5,7 @@ import (
 
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap/zapcore"
-	"my-shop/common/global"
+	"github.com/georgezhangjiacheng/my-shop-common/global"
 )
 
 //@author: georgezhangjc
