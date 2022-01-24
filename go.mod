@@ -1,4 +1,4 @@
-module my-shop/common
+module github.com/georgezhangjiacheng/my-shop-common
 
 go 1.16
 
