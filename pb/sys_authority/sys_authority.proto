@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package sys_authority;
+
+option go_package = "github.com/georgezhangjiacheng/my-shop-common/pb/sys_authority;sys_authority";
+
+message Authority{
+  string AuthorityId = 1;
+  string AuthorityName = 2;
+  string ParentId = 3;
+}
+
+message CreateAuthorityArgs{
+  Authority Authority = 1;
+}
+
+message CreateAuthorityReply{
+  int32 Code = 1;
+  string Msg = 2;
+  string data = 3;
+}
+
+service AuthorityService{
+  rpc CreateAuthority (CreateAuthorityArgs) returns (CreateAuthorityReply) {}
+  rpc SayHello (stream CreateAuthorityArgs) returns (CreateAuthorityReply) {}
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package sys_user;
+
+option go_package="github.com/georgezhangjiacheng/my-shop-common/pb/sys_user;sys_user";
+
+import "sys_authority/sys_authority.proto";
+
+enum SEX{
+  MAN = 0;
+  WOMAN = 1;
+  OTHER = 2;
+}
+
+message User{
+  string Username = 1;
+  string Password = 2;
+  string NickName = 3;
+  int32 age = 4;
+
+  SEX sex = 5;
+  sys_authority.Authority Authority = 6;
+}
+
+message UserList{
+  repeated User Users = 1;
+
+}
