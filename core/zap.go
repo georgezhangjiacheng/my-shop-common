@@ -2,13 +2,13 @@ package core
 
 import (
 	"fmt"
-	"github.com/georgezhangjiacheng/my-shop-common/utils"
 	"os"
 	"time"
 
+	"github.com/georgezhangjiacheng/my-shop-common/global"
+	"github.com/georgezhangjiacheng/my-shop-common/utils"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
-	"github.com/georgezhangjiacheng/my-shop-common/global"
 )
 
 func Zap() (logger *zap.Logger) {
@@ -50,17 +50,17 @@ func Zap() (logger *zap.Logger) {
 // getEncoderConfig 获取zapcore.EncoderConfig
 func getEncoderConfig() (config zapcore.EncoderConfig) {
 	config = zapcore.EncoderConfig{
-		MessageKey:     "message",
-		LevelKey:       "level",
-		TimeKey:        "time",
+		MessageKey:     "message", // 输入信息的key名
+		LevelKey:       "level",   // 输出日志级别的key名
+		TimeKey:        "time",    // 输出时间的key名
 		NameKey:        "logger",
 		CallerKey:      "caller",
 		StacktraceKey:  global.CONFIG.Zap.StacktraceKey,
-		LineEnding:     zapcore.DefaultLineEnding,
-		EncodeLevel:    zapcore.LowercaseLevelEncoder,
-		EncodeTime:     CustomTimeEncoder,
-		EncodeDuration: zapcore.SecondsDurationEncoder,
-		EncodeCaller:   zapcore.FullCallerEncoder,
+		LineEnding:     zapcore.DefaultLineEnding,      // 每行的分隔符 即"\n"
+		EncodeLevel:    zapcore.LowercaseLevelEncoder,  // 将日志级别字符串转化为小写
+		EncodeTime:     CustomTimeEncoder,              // 输出的时间格式
+		EncodeDuration: zapcore.SecondsDurationEncoder, // 执行消耗的时间转化成浮点型的秒
+		EncodeCaller:   zapcore.FullCallerEncoder,      // 以包/文件:行号 格式化调用堆栈
 	}
 	switch {
 	case global.CONFIG.Zap.EncodeLevel == "LowercaseLevelEncoder": // 小写编码器(默认)

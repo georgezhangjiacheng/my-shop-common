@@ -3,14 +3,14 @@ package utils
 import (
 	"os"
 
+	"github.com/georgezhangjiacheng/my-shop-common/global"
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap/zapcore"
-	"github.com/georgezhangjiacheng/my-shop-common/global"
 )
 
 //@author: georgezhangjc
 //@function: GetWriteSyncer
-//@description: zap logger中加入file-rotatelogs
+//@description: zap logger中加入file-rotatelogs,lumberjack切割日志
 //@return: zapcore.WriteSyncer, error
 
 func GetWriteSyncer(file string) zapcore.WriteSyncer {
